@@ -78,7 +78,7 @@ def extract_images(filename):
     """Extract the images into a 4D uint8 numpy array [index, y, x, depth]."""
     print(f"Extracting {filename}")
     os.system('gunzip --keep' + filename)
-    print("Successfully Extracted : {filename}")
+    print(f"Successfully Extracted : {filename}")
     return idx2numpy.convert_from_file(os.path.join(os.path.dirname(filename), getBaseNameNoExt(filename)))
 
 
@@ -110,7 +110,7 @@ def extract_labels(filename, one_hot=False):
     """Extract the labels into a 1D uint8 numpy array [index]."""
     print(f"Extracting {filename}")
     os.system('gunzip --keep' + filename)
-    print("Successfully Extracted : {filename}")
+    print(f"Successfully Extracted : {filename}")
     labels =  idx2numpy.convert_from_file(os.path.join(os.path.dirname(filename), getBaseNameNoExt(filename)))
     if one_hot:
             return dense_to_one_hot(labels)
