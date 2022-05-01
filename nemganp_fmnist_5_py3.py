@@ -282,7 +282,7 @@ class DCGAN(object):
         ip_alpha=Input(shape=(1,))
         ip_noise=Input(shape=(z_dim,))
         alpha_l=Alpha_Layer(self.alpha_dim)
-        alpha_l.name="Alpha"
+        alpha_l.name="Alpha1"
         alpha=alpha_l(ip_alpha)
         noise = Lambda(self.noise_add)([ip_noise,alpha])
         
