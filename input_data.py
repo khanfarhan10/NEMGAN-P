@@ -1,4 +1,5 @@
-"""Functions for downloading and reading MNIST data."""
+"""Functions for downloading and reading MNIST data.
+File borrowed from https://gist.github.com/haje01/14b0e5d8bd5428df781e"""
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
