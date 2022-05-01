@@ -79,7 +79,10 @@ def extract_images(filename):
     print(f"Extracting {filename}")
     os.system('gunzip --keep' + filename)
     print(f"Successfully Extracted : {filename}")
-    return idx2numpy.convert_from_file(os.path.join(os.path.dirname(filename), getBaseNameNoExt(filename)))
+    data =  idx2numpy.convert_from_file(os.path.join(os.path.dirname(filename), getBaseNameNoExt(filename)))
+    # data = data.reshape(num_images, rows, cols, 1)
+    print(f"data shape : {data.shape}")
+    return data
 
 
 def dense_to_one_hot(labels_dense, num_classes=10):
