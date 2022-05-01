@@ -1,6 +1,7 @@
 # NEMGAN-P
 Code release for FMNIST-5 experiment
 
+[COLAB-NOTEBOOK](https://colab.research.google.com/drive/1LB5CD3aVC-itr32_doBL8bWCqdz5V7bi?usp=sharing)
 ## Dependencies
 
 Python version: 2.7
