@@ -1,0 +1,489 @@
+Extracting /root/fashion/train-images-idx3-ubyte.gz
+Successfully Extracted : /root/fashion/train-images-idx3-ubyte.gz
+data shape : (60000, 28, 28, 1)
+Extracting /root/fashion/train-labels-idx1-ubyte.gz
+Successfully Extracted : /root/fashion/train-labels-idx1-ubyte.gz
+Extracting /root/fashion/t10k-images-idx3-ubyte.gz
+Successfully Extracted : /root/fashion/t10k-images-idx3-ubyte.gz
+data shape : (10000, 28, 28, 1)
+Extracting /root/fashion/t10k-labels-idx1-ubyte.gz
+Successfully Extracted : /root/fashion/t10k-labels-idx1-ubyte.gz
+Extracting /root/fashion/train-images-idx3-ubyte.gz
+Successfully Extracted : /root/fashion/train-images-idx3-ubyte.gz
+data shape : (60000, 28, 28, 1)
+Extracting /root/fashion/train-labels-idx1-ubyte.gz
+Successfully Extracted : /root/fashion/train-labels-idx1-ubyte.gz
+Extracting /root/fashion/t10k-images-idx3-ubyte.gz
+Successfully Extracted : /root/fashion/t10k-images-idx3-ubyte.gz
+data shape : (10000, 28, 28, 1)
+Extracting /root/fashion/t10k-labels-idx1-ubyte.gz
+Successfully Extracted : /root/fashion/t10k-labels-idx1-ubyte.gz
+Extracting /root/fashion/train-images-idx3-ubyte.gz
+Successfully Extracted : /root/fashion/train-images-idx3-ubyte.gz
+data shape : (60000, 28, 28, 1)
+Extracting /root/fashion/train-labels-idx1-ubyte.gz
+Successfully Extracted : /root/fashion/train-labels-idx1-ubyte.gz
+Extracting /root/fashion/t10k-images-idx3-ubyte.gz
+Successfully Extracted : /root/fashion/t10k-images-idx3-ubyte.gz
+data shape : (10000, 28, 28, 1)
+Extracting /root/fashion/t10k-labels-idx1-ubyte.gz
+Successfully Extracted : /root/fashion/t10k-labels-idx1-ubyte.gz
+Extracting /root/fashion/train-images-idx3-ubyte.gz
+Successfully Extracted : /root/fashion/train-images-idx3-ubyte.gz
+data shape : (60000, 28, 28, 1)
+Extracting /root/fashion/train-labels-idx1-ubyte.gz
+Successfully Extracted : /root/fashion/train-labels-idx1-ubyte.gz
+Extracting /root/fashion/t10k-images-idx3-ubyte.gz
+Successfully Extracted : /root/fashion/t10k-images-idx3-ubyte.gz
+data shape : (10000, 28, 28, 1)
+Extracting /root/fashion/t10k-labels-idx1-ubyte.gz
+Successfully Extracted : /root/fashion/t10k-labels-idx1-ubyte.gz
+num_samples : 10000
+count_l : [0, 0, 0, 0, 0]
+len(x_ind) : 2929
+len(x_ind) : 974
+len(x_ind) : 1990
+len(x_ind) : 1135
+D_model Summary:
+Set Alpha Layer Number : alpha_l.name - alpha__layer_10
+Model: "model_15"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ input_92 (InputLayer)          [(None, 1)]          0           []                               
+                                                                                                  
+ input_93 (InputLayer)          [(None, 50)]         0           []                               
+                                                                                                  
+ input_91 (InputLayer)          [(None, 28, 28, 1)]  0           []                               
+                                                                                                  
+ Generator (Functional)         [(64, 28, 28, 1),    6783729     ['input_92[0][0]',               
+                                 (None, 5),                       'input_93[0][0]']               
+                                 (64, 50)]                                                        
+                                                                                                  
+ random_weighted_average_9 (Ran  (64, 28, 28, 1)     0           ['input_91[0][0]',               
+ domWeightedAverage)                                              'Generator[0][0]']              
+                                                                                                  
+ Discriminator (Functional)     (None, 1)            4311553     ['Generator[0][0]',              
+                                                                  'input_91[0][0]',               
+                                                                  'random_weighted_average_9[0][0]
+                                                                 ']                               
+                                                                                                  
+==================================================================================================
+Total params: 11,095,282
+Trainable params: 4,311,553
+Non-trainable params: 6,783,729
+__________________________________________________________________________________________________
+G_model Summary:
+Model: "Generator"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ input_88 (InputLayer)          [(None, 1)]          0           []                               
+                                                                                                  
+ tf.math.subtract_126 (TFOpLamb  (None, 1)           0           ['input_88[0][0]']               
+ da)                                                                                              
+                                                                                                  
+ tf.math.subtract_128 (TFOpLamb  (None, 1)           0           ['input_88[0][0]']               
+ da)                                                                                              
+                                                                                                  
+ tf.math.subtract_130 (TFOpLamb  (None, 1)           0           ['input_88[0][0]']               
+ da)                                                                                              
+                                                                                                  
+ tf.math.subtract_132 (TFOpLamb  (None, 1)           0           ['input_88[0][0]']               
+ da)                                                                                              
+                                                                                                  
+ tf.math.pow_45 (TFOpLambda)    (None, 1)            0           ['tf.math.subtract_126[0][0]']   
+                                                                                                  
+ tf.math.pow_46 (TFOpLambda)    (None, 1)            0           ['tf.math.subtract_128[0][0]']   
+                                                                                                  
+ tf.math.pow_47 (TFOpLambda)    (None, 1)            0           ['tf.math.subtract_130[0][0]']   
+                                                                                                  
+ tf.math.pow_48 (TFOpLambda)    (None, 1)            0           ['tf.math.subtract_132[0][0]']   
+                                                                                                  
+ tf.math.subtract_134 (TFOpLamb  (None, 1)           0           ['input_88[0][0]']               
+ da)                                                                                              
+                                                                                                  
+ tf.math.multiply_126 (TFOpLamb  (None, 1)           0           ['tf.math.pow_45[0][0]']         
+ da)                                                                                              
+                                                                                                  
+ tf.math.multiply_128 (TFOpLamb  (None, 1)           0           ['tf.math.pow_46[0][0]']         
+ da)                                                                                              
+                                                                                                  
+ tf.math.multiply_130 (TFOpLamb  (None, 1)           0           ['tf.math.pow_47[0][0]']         
+ da)                                                                                              
+                                                                                                  
+ tf.math.multiply_132 (TFOpLamb  (None, 1)           0           ['tf.math.pow_48[0][0]']         
+ da)                                                                                              
+                                                                                                  
+ tf.math.pow_49 (TFOpLambda)    (None, 1)            0           ['tf.math.subtract_134[0][0]']   
+                                                                                                  
+ tf.math.multiply_127 (TFOpLamb  (None, 1)           0           ['tf.math.multiply_126[0][0]']   
+ da)                                                                                              
+                                                                                                  
+ tf.math.multiply_129 (TFOpLamb  (None, 1)           0           ['tf.math.multiply_128[0][0]']   
+ da)                                                                                              
+                                                                                                  
+ tf.math.multiply_131 (TFOpLamb  (None, 1)           0           ['tf.math.multiply_130[0][0]']   
+ da)                                                                                              
+                                                                                                  
+ tf.math.multiply_133 (TFOpLamb  (None, 1)           0           ['tf.math.multiply_132[0][0]']   
+ da)                                                                                              
+                                                                                                  
+ tf.math.multiply_134 (TFOpLamb  (None, 1)           0           ['tf.math.pow_49[0][0]']         
+ da)                                                                                              
+                                                                                                  
+ tf.math.add_45 (TFOpLambda)    (None, 1)            0           ['tf.math.multiply_127[0][0]']   
+                                                                                                  
+ tf.math.add_46 (TFOpLambda)    (None, 1)            0           ['tf.math.multiply_129[0][0]']   
+                                                                                                  
+ tf.math.add_47 (TFOpLambda)    (None, 1)            0           ['tf.math.multiply_131[0][0]']   
+                                                                                                  
+ tf.math.add_48 (TFOpLambda)    (None, 1)            0           ['tf.math.multiply_133[0][0]']   
+                                                                                                  
+ tf.math.multiply_135 (TFOpLamb  (None, 1)           0           ['tf.math.multiply_134[0][0]']   
+ da)                                                                                              
+                                                                                                  
+ tf.clip_by_value_45 (TFOpLambd  (None, 1)           0           ['tf.math.add_45[0][0]']         
+ a)                                                                                               
+                                                                                                  
+ tf.clip_by_value_46 (TFOpLambd  (None, 1)           0           ['tf.math.add_46[0][0]']         
+ a)                                                                                               
+                                                                                                  
+ tf.clip_by_value_47 (TFOpLambd  (None, 1)           0           ['tf.math.add_47[0][0]']         
+ a)                                                                                               
+                                                                                                  
+ tf.clip_by_value_48 (TFOpLambd  (None, 1)           0           ['tf.math.add_48[0][0]']         
+ a)                                                                                               
+                                                                                                  
+ tf.math.add_49 (TFOpLambda)    (None, 1)            0           ['tf.math.multiply_135[0][0]']   
+                                                                                                  
+ tf.math.subtract_127 (TFOpLamb  (None, 1)           0           ['tf.clip_by_value_45[0][0]']    
+ da)                                                                                              
+                                                                                                  
+ tf.math.subtract_129 (TFOpLamb  (None, 1)           0           ['tf.clip_by_value_46[0][0]']    
+ da)                                                                                              
+                                                                                                  
+ tf.math.subtract_131 (TFOpLamb  (None, 1)           0           ['tf.clip_by_value_47[0][0]']    
+ da)                                                                                              
+                                                                                                  
+ tf.math.subtract_133 (TFOpLamb  (None, 1)           0           ['tf.clip_by_value_48[0][0]']    
+ da)                                                                                              
+                                                                                                  
+ tf.clip_by_value_49 (TFOpLambd  (None, 1)           0           ['tf.math.add_49[0][0]']         
+ a)                                                                                               
+                                                                                                  
+ tf.math.subtract_136 (TFOpLamb  (None, 1)           0           ['tf.math.subtract_127[0][0]']   
+ da)                                                                                              
+                                                                                                  
+ tf.math.subtract_137 (TFOpLamb  (None, 1)           0           ['tf.math.subtract_129[0][0]']   
+ da)                                                                                              
+                                                                                                  
+ tf.math.subtract_138 (TFOpLamb  (None, 1)           0           ['tf.math.subtract_131[0][0]']   
+ da)                                                                                              
+                                                                                                  
+ tf.math.subtract_139 (TFOpLamb  (None, 1)           0           ['tf.math.subtract_133[0][0]']   
+ da)                                                                                              
+                                                                                                  
+ tf.math.subtract_135 (TFOpLamb  (None, 1)           0           ['tf.clip_by_value_49[0][0]']    
+ da)                                                                                              
+                                                                                                  
+ tf.math.multiply_136 (TFOpLamb  (None, 1)           0           ['tf.math.subtract_136[0][0]',   
+ da)                                                              'tf.math.subtract_129[0][0]']   
+                                                                                                  
+ tf.math.multiply_137 (TFOpLamb  (None, 1)           0           ['tf.math.subtract_137[0][0]',   
+ da)                                                              'tf.math.subtract_131[0][0]']   
+                                                                                                  
+ tf.math.multiply_138 (TFOpLamb  (None, 1)           0           ['tf.math.subtract_138[0][0]',   
+ da)                                                              'tf.math.subtract_133[0][0]']   
+                                                                                                  
+ tf.math.multiply_139 (TFOpLamb  (None, 1)           0           ['tf.math.subtract_139[0][0]',   
+ da)                                                              'tf.math.subtract_135[0][0]']   
+                                                                                                  
+ input_89 (InputLayer)          [(None, 50)]         0           []                               
+                                                                                                  
+ tf.concat_9 (TFOpLambda)       (None, 5)            0           ['tf.math.subtract_127[0][0]',   
+                                                                  'tf.math.multiply_136[0][0]',   
+                                                                  'tf.math.multiply_137[0][0]',   
+                                                                  'tf.math.multiply_138[0][0]',   
+                                                                  'tf.math.multiply_139[0][0]']   
+                                                                                                  
+ lambda_13 (Lambda)             (64, 50)             0           ['input_89[0][0]',               
+                                                                  'tf.concat_9[0][0]']            
+                                                                                                  
+ dense_45 (Dense)               (64, 1024)           52224       ['lambda_13[0][0]']              
+                                                                                                  
+ batch_normalization_63 (BatchN  (64, 1024)          4096        ['dense_45[0][0]']               
+ ormalization)                                                                                    
+                                                                                                  
+ leaky_re_lu_153 (LeakyReLU)    (64, 1024)           0           ['batch_normalization_63[0][0]'] 
+                                                                                                  
+ dense_46 (Dense)               (64, 6272)           6428800     ['leaky_re_lu_153[0][0]']        
+                                                                                                  
+ batch_normalization_64 (BatchN  (64, 6272)          25088       ['dense_46[0][0]']               
+ ormalization)                                                                                    
+                                                                                                  
+ leaky_re_lu_154 (LeakyReLU)    (64, 6272)           0           ['batch_normalization_64[0][0]'] 
+                                                                                                  
+ reshape_9 (Reshape)            (64, 7, 7, 128)      0           ['leaky_re_lu_154[0][0]']        
+                                                                                                  
+ dropout_90 (Dropout)           (64, 7, 7, 128)      0           ['reshape_9[0][0]']              
+                                                                                                  
+ conv2d_transpose_54 (Conv2DTra  (64, 7, 7, 64)      204864      ['dropout_90[0][0]']             
+ nspose)                                                                                          
+                                                                                                  
+ batch_normalization_65 (BatchN  (64, 7, 7, 64)      256         ['conv2d_transpose_54[0][0]']    
+ ormalization)                                                                                    
+                                                                                                  
+ leaky_re_lu_155 (LeakyReLU)    (64, 7, 7, 64)       0           ['batch_normalization_65[0][0]'] 
+                                                                                                  
+ up_sampling2d_18 (UpSampling2D  (64, 14, 14, 64)    0           ['leaky_re_lu_155[0][0]']        
+ )                                                                                                
+                                                                                                  
+ conv2d_transpose_55 (Conv2DTra  (64, 14, 14, 32)    51232       ['up_sampling2d_18[0][0]']       
+ nspose)                                                                                          
+                                                                                                  
+ batch_normalization_66 (BatchN  (64, 14, 14, 32)    128         ['conv2d_transpose_55[0][0]']    
+ ormalization)                                                                                    
+                                                                                                  
+ leaky_re_lu_156 (LeakyReLU)    (64, 14, 14, 32)     0           ['batch_normalization_66[0][0]'] 
+                                                                                                  
+ conv2d_transpose_56 (Conv2DTra  (64, 14, 14, 16)    12816       ['leaky_re_lu_156[0][0]']        
+ nspose)                                                                                          
+                                                                                                  
+ batch_normalization_67 (BatchN  (64, 14, 14, 16)    64          ['conv2d_transpose_56[0][0]']    
+ ormalization)                                                                                    
+                                                                                                  
+ leaky_re_lu_157 (LeakyReLU)    (64, 14, 14, 16)     0           ['batch_normalization_67[0][0]'] 
+                                                                                                  
+ conv2d_transpose_57 (Conv2DTra  (64, 14, 14, 8)     3208        ['leaky_re_lu_157[0][0]']        
+ nspose)                                                                                          
+                                                                                                  
+ batch_normalization_68 (BatchN  (64, 14, 14, 8)     32          ['conv2d_transpose_57[0][0]']    
+ ormalization)                                                                                    
+                                                                                                  
+ leaky_re_lu_158 (LeakyReLU)    (64, 14, 14, 8)      0           ['batch_normalization_68[0][0]'] 
+                                                                                                  
+ up_sampling2d_19 (UpSampling2D  (64, 28, 28, 8)     0           ['leaky_re_lu_158[0][0]']        
+ )                                                                                                
+                                                                                                  
+ conv2d_transpose_58 (Conv2DTra  (64, 28, 28, 4)     804         ['up_sampling2d_19[0][0]']       
+ nspose)                                                                                          
+                                                                                                  
+ batch_normalization_69 (BatchN  (64, 28, 28, 4)     16          ['conv2d_transpose_58[0][0]']    
+ ormalization)                                                                                    
+                                                                                                  
+ leaky_re_lu_159 (LeakyReLU)    (64, 28, 28, 4)      0           ['batch_normalization_69[0][0]'] 
+                                                                                                  
+ conv2d_transpose_59 (Conv2DTra  (64, 28, 28, 1)     101         ['leaky_re_lu_159[0][0]']        
+ nspose)                                                                                          
+                                                                                                  
+ activation_18 (Activation)     (64, 28, 28, 1)      0           ['conv2d_transpose_59[0][0]']    
+                                                                                                  
+==================================================================================================
+Total params: 6,783,729
+Trainable params: 0
+Non-trainable params: 6,783,729
+__________________________________________________________________________________________________
+DE_model Summary:
+Model: "Decoder"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_94 (InputLayer)       [(None, 28, 28, 1)]       0         
+                                                                 
+ conv2d_85 (Conv2D)          (None, 14, 14, 32)        832       
+                                                                 
+ leaky_re_lu_164 (LeakyReLU)  (None, 14, 14, 32)       0         
+                                                                 
+ dropout_95 (Dropout)        (None, 14, 14, 32)        0         
+                                                                 
+ conv2d_86 (Conv2D)          (None, 7, 7, 64)          51264     
+                                                                 
+ leaky_re_lu_165 (LeakyReLU)  (None, 7, 7, 64)         0         
+                                                                 
+ dropout_96 (Dropout)        (None, 7, 7, 64)          0         
+                                                                 
+ conv2d_87 (Conv2D)          (None, 4, 4, 128)         204928    
+                                                                 
+ leaky_re_lu_166 (LeakyReLU)  (None, 4, 4, 128)        0         
+                                                                 
+ dropout_97 (Dropout)        (None, 4, 4, 128)         0         
+                                                                 
+ conv2d_88 (Conv2D)          (None, 2, 2, 256)         819456    
+                                                                 
+ leaky_re_lu_167 (LeakyReLU)  (None, 2, 2, 256)        0         
+                                                                 
+ dropout_98 (Dropout)        (None, 2, 2, 256)         0         
+                                                                 
+ conv2d_89 (Conv2D)          (None, 1, 1, 512)         3277312   
+                                                                 
+ leaky_re_lu_168 (LeakyReLU)  (None, 1, 1, 512)        0         
+                                                                 
+ dropout_99 (Dropout)        (None, 1, 1, 512)         0         
+                                                                 
+ flatten_19 (Flatten)        (None, 512)               0         
+                                                                 
+ dense_48 (Dense)            (None, 50)                25650     
+                                                                 
+ leaky_re_lu_169 (LeakyReLU)  (None, 50)               0         
+                                                                 
+ dense_49 (Dense)            (None, 5)                 255       
+                                                                 
+ activation_19 (Activation)  (None, 5)                 0         
+                                                                 
+=================================================================
+Total params: 4,379,697
+Trainable params: 4,379,697
+Non-trainable params: 0
+_________________________________________________________________
+AD_model Summary:
+Model: "model_16"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ input_95 (InputLayer)          [(None, 1)]          0           []                               
+                                                                                                  
+ input_96 (InputLayer)          [(None, 50)]         0           []                               
+                                                                                                  
+ Generator (Functional)         [(64, 28, 28, 1),    6783729     ['input_95[0][0]',               
+                                 (None, 5),                       'input_96[0][0]']               
+                                 (64, 50)]                                                        
+                                                                                                  
+ Discriminator (Functional)     (None, 1)            4311553     ['Generator[1][0]']              
+                                                                                                  
+==================================================================================================
+Total params: 11,095,282
+Trainable params: 6,768,889
+Non-trainable params: 4,326,393
+__________________________________________________________________________________________________
+AE_model Summary:
+All layers 2
+['input_88', 'tf.math.subtract_126', 'tf.math.subtract_128', 'tf.math.subtract_130', 'tf.math.subtract_132', 'tf.math.pow_45', 'tf.math.pow_46', 'tf.math.pow_47', 'tf.math.pow_48', 'tf.math.subtract_134', 'tf.math.multiply_126', 'tf.math.multiply_128', 'tf.math.multiply_130', 'tf.math.multiply_132', 'tf.math.pow_49', 'tf.math.multiply_127', 'tf.math.multiply_129', 'tf.math.multiply_131', 'tf.math.multiply_133', 'tf.math.multiply_134', 'tf.math.add_45', 'tf.math.add_46', 'tf.math.add_47', 'tf.math.add_48', 'tf.math.multiply_135', 'tf.clip_by_value_45', 'tf.clip_by_value_46', 'tf.clip_by_value_47', 'tf.clip_by_value_48', 'tf.math.add_49', 'tf.math.subtract_127', 'tf.math.subtract_129', 'tf.math.subtract_131', 'tf.math.subtract_133', 'tf.clip_by_value_49', 'tf.math.subtract_136', 'tf.math.subtract_137', 'tf.math.subtract_138', 'tf.math.subtract_139', 'tf.math.subtract_135', 'tf.math.multiply_136', 'tf.math.multiply_137', 'tf.math.multiply_138', 'tf.math.multiply_139', 'input_89', 'tf.concat_9', 'lambda_13', 'dense_45', 'batch_normalization_63', 'leaky_re_lu_153', 'dense_46', 'batch_normalization_64', 'leaky_re_lu_154', 'reshape_9', 'dropout_90', 'conv2d_transpose_54', 'batch_normalization_65', 'leaky_re_lu_155', 'up_sampling2d_18', 'conv2d_transpose_55', 'batch_normalization_66', 'leaky_re_lu_156', 'conv2d_transpose_56', 'batch_normalization_67', 'leaky_re_lu_157', 'conv2d_transpose_57', 'batch_normalization_68', 'leaky_re_lu_158', 'up_sampling2d_19', 'conv2d_transpose_58', 'batch_normalization_69', 'leaky_re_lu_159', 'conv2d_transpose_59', 'activation_18']
+/usr/local/lib/python3.7/dist-packages/keras/optimizer_v2/adam.py:105: UserWarning: The `lr` argument is deprecated, use `learning_rate` instead.
+  super(Adam, self).__init__(name, **kwargs)
+Model: "model_17"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ input_97 (InputLayer)          [(None, 1)]          0           []                               
+                                                                                                  
+ input_98 (InputLayer)          [(None, 50)]         0           []                               
+                                                                                                  
+ Generator (Functional)         [(64, 28, 28, 1),    6783729     ['input_97[0][0]',               
+                                 (None, 5),                       'input_98[0][0]']               
+                                 (64, 50)]                                                        
+                                                                                                  
+ Decoder (Functional)           [(None, 50),         4379697     ['Generator[2][0]']              
+                                 (None, 5)]                                                       
+                                                                                                  
+ lambda_14 (Lambda)             (64,)                0           ['Generator[2][2]',              
+                                                                  'Decoder[0][0]']                
+                                                                                                  
+ lambda_15 (Lambda)             (64,)                0           ['Generator[2][1]',              
+                                                                  'Decoder[0][1]']                
+                                                                                                  
+==================================================================================================
+Total params: 11,163,426
+Trainable params: 11,148,586
+Non-trainable params: 14,840
+__________________________________________________________________________________________________
+Alpha_model Summary:
+All layers 3
+['input_88', 'tf.math.subtract_126', 'tf.math.subtract_128', 'tf.math.subtract_130', 'tf.math.subtract_132', 'tf.math.pow_45', 'tf.math.pow_46', 'tf.math.pow_47', 'tf.math.pow_48', 'tf.math.subtract_134', 'tf.math.multiply_126', 'tf.math.multiply_128', 'tf.math.multiply_130', 'tf.math.multiply_132', 'tf.math.pow_49', 'tf.math.multiply_127', 'tf.math.multiply_129', 'tf.math.multiply_131', 'tf.math.multiply_133', 'tf.math.multiply_134', 'tf.math.add_45', 'tf.math.add_46', 'tf.math.add_47', 'tf.math.add_48', 'tf.math.multiply_135', 'tf.clip_by_value_45', 'tf.clip_by_value_46', 'tf.clip_by_value_47', 'tf.clip_by_value_48', 'tf.math.add_49', 'tf.math.subtract_127', 'tf.math.subtract_129', 'tf.math.subtract_131', 'tf.math.subtract_133', 'tf.clip_by_value_49', 'tf.math.subtract_136', 'tf.math.subtract_137', 'tf.math.subtract_138', 'tf.math.subtract_139', 'tf.math.subtract_135', 'tf.math.multiply_136', 'tf.math.multiply_137', 'tf.math.multiply_138', 'tf.math.multiply_139', 'input_89', 'tf.concat_9', 'lambda_13', 'dense_45', 'batch_normalization_63', 'leaky_re_lu_153', 'dense_46', 'batch_normalization_64', 'leaky_re_lu_154', 'reshape_9', 'dropout_90', 'conv2d_transpose_54', 'batch_normalization_65', 'leaky_re_lu_155', 'up_sampling2d_18', 'conv2d_transpose_55', 'batch_normalization_66', 'leaky_re_lu_156', 'conv2d_transpose_56', 'batch_normalization_67', 'leaky_re_lu_157', 'conv2d_transpose_57', 'batch_normalization_68', 'leaky_re_lu_158', 'up_sampling2d_19', 'conv2d_transpose_58', 'batch_normalization_69', 'leaky_re_lu_159', 'conv2d_transpose_59', 'activation_18']
+Model: "model_18"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ input_101 (InputLayer)         [(None, 28, 28, 1)]  0           []                               
+                                                                                                  
+ input_99 (InputLayer)          [(None, 1)]          0           []                               
+                                                                                                  
+ input_100 (InputLayer)         [(None, 50)]         0           []                               
+                                                                                                  
+ Decoder (Functional)           [(None, 50),         4379697     ['input_101[0][0]']              
+                                 (None, 5)]                                                       
+                                                                                                  
+ Generator (Functional)         [(64, 28, 28, 1),    6783729     ['input_99[0][0]',               
+                                 (None, 5),                       'input_100[0][0]']              
+                                 (64, 50)]                                                        
+                                                                                                  
+ lambda_16 (Lambda)             ()                   0           ['Decoder[1][1]',                
+                                                                  'Generator[3][1]']              
+                                                                                                  
+==================================================================================================
+Total params: 11,163,426
+Trainable params: 0
+Non-trainable params: 11,163,426
+__________________________________________________________________________________________________
+Decoder_model Summary:
+Model: "model_19"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_102 (InputLayer)      [(None, 28, 28, 1)]       0         
+                                                                 
+ Decoder (Functional)        [(None, 50),              4379697   
+                              (None, 5)]                         
+                                                                 
+=================================================================
+Total params: 4,379,697
+Trainable params: 4,379,697
+Non-trainable params: 0
+_________________________________________________________________
+num_samples : 500
+count_l : [0, 0, 0, 0, 0]
+len(x_ind) : 140
+len(x_ind) : 51
+len(x_ind) : 93
+len(x_ind) : 69
+/usr/local/lib/python3.7/dist-packages/ipykernel_launcher.py:225: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+/usr/local/lib/python3.7/dist-packages/ipykernel_launcher.py:226: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-45-de0f96883ed6> in <module>()
+    297     mnist_nemgan = MNIST_NEMGAN()
+    298     timer = ElapsedTimer()
+--> 299     mnist_nemgan.train(train_steps=200000, batch_size=BATCH_SIZE, save_interval=1000)
+    300     timer.elapsed_time()
+
+3 frames
+<ipython-input-45-de0f96883ed6> in train(self, train_steps, batch_size, save_interval)
+    243             dummy_y = np.zeros((BATCH_SIZE, 1), dtype=np.float32)
+    244 
+--> 245             d_loss = self.discriminator.train_on_batch([images_train,alpha_batch,noise_batch],[positive_y, negative_y, dummy_y])
+    246 
+    247             a_loss = self.adversarial.train_on_batch([alpha_batch,noise_batch], positive_y)
+
+/usr/local/lib/python3.7/dist-packages/keras/engine/training.py in train_on_batch(self, x, y, sample_weight, class_weight, reset_metrics, return_dict)
+   2091                                                     class_weight)
+   2092       self.train_function = self.make_train_function()
+-> 2093       logs = self.train_function(iterator)
+   2094 
+   2095     logs = tf_utils.sync_to_numpy_or_python_type(logs)
+
+/usr/local/lib/python3.7/dist-packages/tensorflow/python/util/traceback_utils.py in error_handler(*args, **kwargs)
+    151     except Exception as e:
+    152       filtered_tb = _process_traceback_frames(e.__traceback__)
+--> 153       raise e.with_traceback(filtered_tb) from None
+    154     finally:
+    155       del filtered_tb
+
+/usr/local/lib/python3.7/dist-packages/tensorflow/python/framework/func_graph.py in autograph_handler(*args, **kwargs)
+   1145           except Exception as e:  # pylint:disable=broad-except
+   1146             if hasattr(e, "ag_error_metadata"):
+-> 1147               raise e.ag_error_metadata.to_exception(e)
+   1148             else:
+   1149               raise
+
+TypeError: in user code:
+
+    File "/usr/local/lib/python3.7/dist-packages/keras/engine/training.py", line 1021, in train_function  *
+        return step_function(self, iterator)
+    File "<ipython-input-8-e5ef6ee0938b>", line 44, in gradient_penalty_loss  *
+        gradients = K.gradients(y_pred, averaged_samples)[0]
+    File "/usr/local/lib/python3.7/dist-packages/keras/backend.py", line 4353, in gradients  **
+        loss, variables, colocate_gradients_with_ops=True)
+    File "/usr/local/lib/python3.7/dist-packages/keras/engine/keras_tensor.py", line 255, in __array__
+        f'You are passing {self}, an intermediate Keras symbolic input/output, '
+
+    TypeError: You are passing KerasTensor(type_spec=TensorSpec(shape=(64, 28, 28, 1), dtype=tf.float32, name=None), name='random_weighted_average_9/add:0', description="created by layer 'random_weighted_average_9'"), an intermediate Keras symbolic input/output, to a TF API that does not allow registering custom dispatchers, such as `tf.cond`, `tf.function`, gradient tapes, or `tf.map_fn`. Keras Functional model construction only supports TF API calls that *do* support dispatching, such as `tf.math.add` or `tf.reshape`. Other APIs cannot be called directly on symbolic Kerasinputs/outputs. You can work around this limitation by putting the operation in a custom Keras layer `call` and calling that layer on this symbolic input/output.
