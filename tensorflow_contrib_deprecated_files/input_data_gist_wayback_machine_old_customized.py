@@ -81,6 +81,7 @@ def extract_images(filename):
     print(f"Successfully Extracted : {filename}")
     data =  idx2numpy.convert_from_file(os.path.join(os.path.dirname(filename), getBaseNameNoExt(filename)))
     # data = data.reshape(num_images, rows, cols, 1)
+    data = data.reshape(data.shape[0], data.shape[1], data.shape[2], 1)
     print(f"data shape : {data.shape}")
     return data
 
@@ -142,8 +143,9 @@ class DataSet(object):
 
             # Convert shape from [num examples, rows, columns, depth]
             # to [num examples, rows*columns] (assuming depth == 1)
-            print(f"images.shape: {images.shape}")
-            assert images.shape[3] == 1 if len(images.shape) > 2 else True
+            # print(f"images.shape: {images.shape}")
+            # assert images.shape[3] == 1 if len(images.shape) > 2 else True
+            assert images.shape[3] == 1
             images = images.reshape(images.shape[0], images.shape[1] * images.shape[2])
             if dtype == tf.float32:
                 # Convert from [0, 255] -> [0.0, 1.0].
