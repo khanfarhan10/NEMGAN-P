@@ -1,3 +1,4 @@
+# An effort to change python 2 dependency of this GAN to python 3
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
@@ -17,10 +18,16 @@ from keras.layers import Input, Dense, Activation, Flatten, Reshape
 from keras.layers import Conv2D, Conv2DTranspose, UpSampling2D
 from keras.layers import LeakyReLU, Dropout
 from keras.layers import BatchNormalization
-from keras.optimizers import Adam
+# from keras.optimizers import Adam
+from tensorflow.keras.optimizers import Adam
 from keras.layers.merge import _Merge
 from keras import backend as K
-from keras.engine.topology import Layer
+# from keras.engine.topology import Layer
+# from tensorflow.keras import layers
+
+ 
+from tensorflow.python.keras.layers import Layer# , InputSpec
+# https://stackoverflow.com/questions/51337558/how-to-import-keras-engine-topology-in-tensorflow
 from keras.layers import Lambda
 from functools import partial
 
@@ -613,7 +620,9 @@ class MNIST_NEMGAN(object):
                 
                 x_ind = [k for k in range(0, num_samples) if np.argmax(y[k])==i]
                 
+                print(f"len(x_ind) : {len(x_ind)}")
                 x_add = x[x_ind][np.random.randint(0, len(x_ind), size=defi)]
+                # the problem is here - Randint (0, 0) is getting passed !!
                 
                 y_add = np.zeros((defi,n_classes))
                 
@@ -754,22 +763,3 @@ if __name__ == '__main__':
     timer = ElapsedTimer()
     mnist_nemgan.train(train_steps=200000, batch_size=BATCH_SIZE, save_interval=1000)
     timer.elapsed_time()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
