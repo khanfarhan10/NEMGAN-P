@@ -17,8 +17,6 @@ https://web.archive.org/web/20160127123008/https://github.com/tensorflow/tensorf
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-
-"""Functions for downloading and reading MNIST data."""
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
