@@ -140,7 +140,7 @@ class DataSet(object):
             # Convert shape from [num examples, rows, columns, depth]
             # to [num examples, rows*columns] (assuming depth == 1)
             print(f"images.shape: {images.shape}")
-            assert images.shape[3] == 1
+            assert images.shape[3] == 1 if len(images.shape) > 2 else True
             images = images.reshape(images.shape[0], images.shape[1] * images.shape[2])
             if dtype == tf.float32:
                 # Convert from [0, 255] -> [0.0, 1.0].
